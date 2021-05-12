@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="log_in_or_sign_up_to_airbnb">Log in or sign up to airbnb</string>
+    <string name="email">Email</string>
+    <string name="continue1">Continue</string>
+    <string name="or">or</string>
+    <string name="continue_with_phone">Continue with Phone</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_apple">Continue with Apple</string>
+</resources>
