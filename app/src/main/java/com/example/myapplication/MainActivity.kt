@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
         val cost : EditText = findViewById(R.id.cost_of_service)
         val continueButton : Button = findViewById(R.id.Continue)
         val orView : TextView = findViewById(R.id.or)
-        //continueButton.isClickable = false
-        //continueButton.setBackgroundColor(resources.getColor(R.color.Gray))
+        continueButton.isClickable = false
+        continueButton.setBackgroundColor(resources.getColor(R.color.Gray))
         cost.addTextChangedListener(object : TextWatcher {
 
             override fun afterTextChanged(s: Editable) {
