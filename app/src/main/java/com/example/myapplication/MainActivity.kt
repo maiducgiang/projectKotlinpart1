@@ -3,13 +3,17 @@ package com.example.myapplication
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
+    fun isValidString(str: String): Boolean{
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(str).matches()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +33,16 @@ class MainActivity : AppCompatActivity() {
                     continueButton.isClickable = false
                     continueButton.setBackgroundColor(resources.getColor(R.color.Gray))
                 }
+                else if(!isValidString(email)){
+
+                    val myToast = Toast.makeText(applicationContext,"Invalid email",Toast.LENGTH_SHORT)
+                    myToast.setGravity(Gravity.LEFT,200,200)
+                    myToast.show()
+                    continueButton.isClickable = false
+                    continueButton.setBackgroundColor(resources.getColor(R.color.Gray))
+                }
                 else{
+
                     continueButton.isClickable = true
                     continueButton.setBackgroundColor(resources.getColor(R.color.Red))
                 }
@@ -49,5 +62,6 @@ class MainActivity : AppCompatActivity() {
                 continueButton.setBackgroundColor(resources.getColor(R.color.Red))
             }
         })
+
     }
 }
